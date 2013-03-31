@@ -20,4 +20,15 @@ before_filter :require_login
 		  	end
 		end
 	end
+
+	def search
+		first_name = params[:first_name]
+		last_name = params[:last_name]
+		trip_instance_id = params[:trip_instance_id]
+		@users = User.where("first_name = ? AND last_name = ?", first_name, last_name)
+
+		respond_to do |format|
+			format.html { render :partial=>'dashboard/breakLeaderSearch', :locals=>{:trip_instance_id=>trip_instance_id, :users=>@users} }
+		end
+	end
 end

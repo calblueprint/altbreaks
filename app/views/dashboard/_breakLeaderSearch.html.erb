@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
+</head>
+<body>
+	<div id="searchModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-show='true'>
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		  <h3 id="myModalLabel">Break Leader Results</h3>
+		</div>
+		<%= form_tag({:controller=>"trip_permissions", :action=>"create"}) do %>
+	  	<div class="modal-body">
+	  		<%= :users %>
+		    <%= hidden_field_tag(:trip_instance_id, trip_instance_id) %>
+		    <%= button_tag "Add Break Leader", :class => 'btn btn-primary' %>
+	  	</div>
+	  	<div class="modal-footer">
+	    	<button class="btn" data-dismiss="modal" aria-hidden="true">Back</button>
+	  	</div>
+		<% end %>
+	</div>
+</body>

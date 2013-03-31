@@ -18,7 +18,9 @@ Altbreaks::Application.routes.draw do
   
   resources :trip_instances
 
-  resources :trip_permissions
+  resources :trip_permissions do
+    post 'search', :on => :collection
+  end
 
   resources :trips
   
